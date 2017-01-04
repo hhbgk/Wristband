@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/top_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="60"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_larger" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableBottom="@mipmap/ic_favorites"
+        android:gravity="center"
+        android:text="@string/average_heart_rate_per_minute"
+        android:textSize="@dimen/text_small"
+        android:textColor="@android:color/black"/>
+
+    <GridView
+        android:id="@+id/grid_view"
+        android:background="#e5e5e5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:verticalSpacing="1dp"
+        android:horizontalSpacing="1dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:numColumns="2"/>
+</LinearLayout>

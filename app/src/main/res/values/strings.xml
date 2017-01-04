@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Wristband</string>
+    <string name="sport">Sport</string>
+    <string name="heart_rate">HeartRate</string>
+    <string name="sleep">Sleep</string>
+    <string name="mine">Mine</string>
+    <string name="min_heart_rate">Min heart rate</string>
+    <string name="max_heart_rate">Max heart rate</string>
+    <string name="day">Day</string>
+    <string name="week">Week</string>
+    <string name="moth">Moth</string>
+    <string name="fitness">Fitness</string>
+    <string name="average_heart_rate_per_minute">Average heart rate per minute</string>
+    <string name="security_value">Security</string>
+    <string name="burn_calories">Calories</string>
+</resources>

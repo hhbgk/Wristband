@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="heart_rate_grids">
+        <item>@string/min_heart_rate</item>
+        <item>@string/max_heart_rate</item>
+        <item>@string/fitness</item>
+        <item>@string/security_value</item>
+        <item>@string/burn_calories</item>
+    </array>
+</resources>

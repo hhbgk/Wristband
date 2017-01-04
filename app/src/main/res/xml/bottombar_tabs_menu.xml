@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_sport"
+        icon="@mipmap/ic_favorites"
+        title="@string/sport"
+        barColorWhenSelected="#00000000" />
+    <tab
+        id="@+id/tab_heartrate"
+        icon="@mipmap/ic_favorites"
+        title="@string/heart_rate"
+        barColorWhenSelected="#00000000" />
+    <tab
+        id="@+id/tab_sleep"
+        icon="@mipmap/ic_friends"
+        title="@string/sleep"
+        barColorWhenSelected="#00000000" />
+    <tab
+        id="@+id/tab_mine"
+        icon="@mipmap/ic_friends"
+        title="@string/mine"
+        barColorWhenSelected="#00000000" />
+</tabs>
