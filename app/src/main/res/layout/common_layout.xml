@@ -24,7 +24,12 @@
         android:textSize="@dimen/text_small"
         android:textColor="@android:color/black"/>
 
-    <GridView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+<!--    <GridView
         android:id="@+id/grid_view"
         android:background="#e5e5e5"
         android:layout_width="match_parent"
@@ -34,5 +39,5 @@
         android:horizontalSpacing="1dp"
         android:stretchMode="columnWidth"
         android:gravity="center"
-        android:numColumns="2"/>
+        android:numColumns="2"/>-->
 </LinearLayout>

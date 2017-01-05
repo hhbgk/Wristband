@@ -6,10 +6,11 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Legend;
@@ -24,6 +25,7 @@ import com.hhbgk.wristband.R;
 import com.hhbgk.wristband.base.BaseFragment;
 import com.hhbgk.wristband.data.bean.CommonInfo;
 import com.hhbgk.wristband.ui.adapter.CommonAdapter;
+import com.hhbgk.wristband.ui.widget.CustomDivider;
 import com.hhbgk.wristband.ui.widget.CustomMarkerView;
 
 import java.util.ArrayList;
@@ -37,7 +39,7 @@ import java.util.Random;
 public class HeartRateFragment extends BaseFragment {
     String tag = getClass().getSimpleName();
     private LineChart mChart;
-    private GridView mGridView;
+    private RecyclerView mGridView;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,7 +51,7 @@ public class HeartRateFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.heartrate_fragment, container, false);
         mChart = (LineChart) view.findViewById(R.id.line_chart);
-        mGridView = (GridView) view.findViewById(R.id.grid_view);
+        mGridView = (RecyclerView) view.findViewById(R.id.grid_view);
         initLineChart();
         return view;
     }
@@ -159,6 +161,8 @@ public class HeartRateFragment extends BaseFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        mGridView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        mGridView.addItemDecoration(new CustomDivider(getActivity()));
         String[] grids = mApplication.getResources().getStringArray(R.array.heart_rate_grids);
 
         Random r = new Random();
@@ -175,6 +179,18 @@ public class HeartRateFragment extends BaseFragment {
 
         CommonAdapter adapter = new CommonAdapter(getActivity(), list);
         mGridView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new CommonAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                showToastShort("item click "+position);
+            }
+
+            @Override
+            public void onItemLongClick(View view, int position) {
+                showToastShort("item long click "+position);
+            }
+        });
     }
 
     private void setData(int count, float range) {
