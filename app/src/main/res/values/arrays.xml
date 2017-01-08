@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="sport_grids">
+        <item>@string/total_kilometres</item>
+        <item>@string/total_times</item>
+        <item>@string/calories</item>
+        <item>@string/total_steps</item>
+        <item>@string/average_speed</item>
+        <item>@string/pace</item>
+        <item>@string/stride</item>
+        <item>@string/step_frequency</item>
+    </string-array>
     <array name="heart_rate_grids">
         <item>@string/min_heart_rate</item>
         <item>@string/max_heart_rate</item>
@@ -7,4 +17,15 @@
         <item>@string/security_value</item>
         <item>@string/burn_calories</item>
     </array>
+    <string-array name="me_lists">
+        <item>@string/my_name</item>
+        <item>@string/wristband_state</item>
+        <item>@string/wristband_power</item>
+        <item>@string/my_alerted</item>
+        <item>@string/my_alarm_clock</item>
+        <item>@string/search_wristband</item>
+        <item>@string/default_settings</item>
+        <item>@string/firmware_upgrade</item>
+        <item>@string/about</item>
+    </string-array>
 </resources>

@@ -3,7 +3,7 @@
     <string name="sport">Sport</string>
     <string name="heart_rate">HeartRate</string>
     <string name="sleep">Sleep</string>
-    <string name="mine">Mine</string>
+    <string name="mine">Me</string>
     <string name="min_heart_rate">Min heart rate</string>
     <string name="max_heart_rate">Max heart rate</string>
     <string name="day">Day</string>
@@ -13,4 +13,22 @@
     <string name="average_heart_rate_per_minute">Average heart rate per minute</string>
     <string name="security_value">Security</string>
     <string name="burn_calories">Calories</string>
+    <string name="goal">Goal:</string>
+    <string name="total_kilometres">Kilometres</string>
+    <string name="total_times">Duration</string>
+    <string name="calories">Calories</string>
+    <string name="total_steps">Steps</string>
+    <string name="average_speed">Average speed</string>
+    <string name="pace">Pace</string>
+    <string name="stride">Stride</string>
+    <string name="step_frequency">Step frequency</string>
+    <string name="my_name">My name</string>
+    <string name="wristband_state">Wristband state</string>
+    <string name="wristband_power">Wristband power</string>
+    <string name="my_alerted">My alerted</string>
+    <string name="my_alarm_clock">My alarm clock</string>
+    <string name="search_wristband">Search wristband</string>
+    <string name="default_settings">Default settings</string>
+    <string name="firmware_upgrade">Firmware upgrade</string>
+    <string name="about">About</string>
 </resources>

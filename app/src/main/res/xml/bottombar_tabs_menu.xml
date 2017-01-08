@@ -16,7 +16,7 @@
         title="@string/sleep"
         barColorWhenSelected="#00000000" />
     <tab
-        id="@+id/tab_mine"
+        id="@+id/tab_me"
         icon="@mipmap/ic_friends"
         title="@string/mine"
         barColorWhenSelected="#00000000" />
