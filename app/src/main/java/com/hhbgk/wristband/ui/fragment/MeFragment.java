@@ -7,12 +7,15 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.hhbgk.wristband.R;
 import com.hhbgk.wristband.base.BaseFragment;
 import com.hhbgk.wristband.data.bean.CommonInfo;
+import com.hhbgk.wristband.ui.adapter.BaseAdapter;
 import com.hhbgk.wristband.ui.adapter.ListAdapter;
 import com.hhbgk.wristband.ui.widget.CustomDivider;
+import com.hhbgk.wristband.util.Dbug;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +25,9 @@ import java.util.List;
  */
 
 public class MeFragment extends BaseFragment {
+    private String tag = getClass().getSimpleName();
     private RecyclerView mGridView;
+    private TextView mQuit;
 
     @Nullable
     @Override
@@ -31,6 +36,7 @@ public class MeFragment extends BaseFragment {
         view.findViewById(R.id.top_title).setVisibility(View.GONE);
         view.findViewById(R.id.subtitle).setVisibility(View.GONE);
         mGridView = (RecyclerView) view.findViewById(R.id.grid_view);
+        mQuit = (TextView) view.findViewById(R.id.footer_text);
         return view;
     }
 
@@ -47,5 +53,24 @@ public class MeFragment extends BaseFragment {
 
         ListAdapter adapter = new ListAdapter(getActivity(), list);
         mGridView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new BaseAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Dbug.i(tag, "onItem "+position);
+            }
+
+            @Override
+            public void onItemLongClick(View view, int position) {
+                Dbug.i(tag, "onItemLong "+position);
+            }
+        });
+
+        mQuit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showToastShort("Quit");
+            }
+        });
     }
 }

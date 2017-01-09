@@ -126,6 +126,7 @@ public class HeartRateFragment extends BaseFragment {
 //        leftAxis.addLimitLine(ll2);
         leftAxis.setAxisMaximum(300f);
         leftAxis.setAxisMinimum(0f);
+
         //leftAxis.setYOffset(20f);
 //        leftAxis.enableGridDashedLine(10f, 10f, 0f);
         leftAxis.setDrawAxisLine(false);

@@ -28,4 +28,10 @@
         <item>@string/firmware_upgrade</item>
         <item>@string/about</item>
     </string-array>
+    <string-array name="sleep_grids">
+        <item>@string/sober</item>
+        <item>@string/light_sleep</item>
+        <item>@string/sleep_quality</item>
+        <item>@string/total_sleep</item>
+    </string-array>
 </resources>

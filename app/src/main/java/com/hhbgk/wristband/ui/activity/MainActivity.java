@@ -8,6 +8,7 @@ import com.hhbgk.wristband.R;
 import com.hhbgk.wristband.base.BaseActivity;
 import com.hhbgk.wristband.ui.fragment.HeartRateFragment;
 import com.hhbgk.wristband.ui.fragment.MeFragment;
+import com.hhbgk.wristband.ui.fragment.SleepFragment;
 import com.hhbgk.wristband.ui.fragment.SportFragment;
 import com.hhbgk.wristband.ui.widget.Toolbar;
 import com.hhbgk.wristband.util.Dbug;
@@ -33,8 +34,10 @@ public class MainActivity extends BaseActivity {
                         changeFragment(R.id.container, new SportFragment(), SportFragment.class.getSimpleName());
                         break;
                     case R.id.tab_heartrate:
-                        Dbug.i(tag, "heart beat----------");
                         changeFragment(R.id.container, new HeartRateFragment(), HeartRateFragment.class.getSimpleName());
+                        break;
+                    case R.id.tab_sleep:
+                        changeFragment(R.id.container, new SleepFragment(), SleepFragment.class.getSimpleName());
                         break;
                     case R.id.tab_me:
                         changeFragment(R.id.container, new MeFragment(), MeFragment.class.getSimpleName());
@@ -42,7 +45,7 @@ public class MainActivity extends BaseActivity {
                 }
             }
         });
-        changeFragment(R.id.container, new SportFragment(), SportFragment.class.getSimpleName());
+        changeFragment(R.id.container, new SleepFragment(), SleepFragment.class.getSimpleName());
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbar.setTitle("Title");
         mToolbar.setNavigationIcon(R.mipmap.ic_favorites);

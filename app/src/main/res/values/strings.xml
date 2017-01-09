@@ -32,4 +32,9 @@
     <string name="firmware_upgrade">Firmware upgrade</string>
     <string name="about">About</string>
     <string name="quit_account">Quit account</string>
+    <string name="deep_sleep">Deep sleep</string>
+    <string name="sober">Sober</string>
+    <string name="light_sleep">Light sleep</string>
+    <string name="sleep_quality">Sleep quality</string>
+    <string name="total_sleep">Total sleep</string>
 </resources>
