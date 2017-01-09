@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.hhbgk.wristband.R;
 import com.hhbgk.wristband.base.BaseFragment;
 import com.hhbgk.wristband.data.bean.CommonInfo;
-import com.hhbgk.wristband.ui.adapter.CommonAdapter;
+import com.hhbgk.wristband.ui.adapter.ListAdapter;
 import com.hhbgk.wristband.ui.widget.CustomDivider;
 
 import java.util.ArrayList;
@@ -45,7 +45,7 @@ public class MeFragment extends BaseFragment {
             list.add(new CommonInfo(s, null, null));
         }
 
-        CommonAdapter adapter = new CommonAdapter(getActivity(), list, 1);
+        ListAdapter adapter = new ListAdapter(getActivity(), list);
         mGridView.setAdapter(adapter);
     }
 }

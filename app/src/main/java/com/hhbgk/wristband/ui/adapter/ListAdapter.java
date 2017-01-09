@@ -14,20 +14,23 @@ import com.hhbgk.wristband.data.bean.CommonInfo;
 
 import java.util.List;
 
-public class CommonAdapter extends BaseAdapter {
+/**
+ * Created by bob on 17-1-9.
+ */
 
+public class ListAdapter extends BaseAdapter {
     private OnItemClickListener mOnItemClickListener;
     private List<CommonInfo> mData;
 
-    public CommonAdapter(Context context, List<CommonInfo> data) {
+    public ListAdapter(Context context, List<CommonInfo> data) {
         this(context, data, 0, 0);
     }
 
-    public CommonAdapter(Context context, List<CommonInfo> data, int headerCount) {
+    public ListAdapter(Context context, List<CommonInfo> data, int headerCount) {
         this(context, data, headerCount, 0);
     }
 
-    public CommonAdapter(Context context, List<CommonInfo> data, int headerCount, int footerCount){
+    public ListAdapter(Context context, List<CommonInfo> data, int headerCount, int footerCount){
         mData = data;
         mHeaderCount = headerCount;
         mFooterCount = footerCount;
@@ -37,7 +40,7 @@ public class CommonAdapter extends BaseAdapter {
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
         if (ITEM_TYPE.ITEM_TYPE_CONTENT.ordinal() == viewType){
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.common_item, parent, false);
+            view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1, parent, false);
             return new ListViewHolder(view);
         } else if (ITEM_TYPE.ITEM_TYPE_FOOTER.ordinal() == viewType){
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.footer_layout, parent, false);
@@ -49,14 +52,9 @@ public class CommonAdapter extends BaseAdapter {
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof ListViewHolder){
-            //ListViewHolder holder = (ListViewHolder) viewHolder;
             final CommonInfo commonInfo = mData.get(position);
             if (!TextUtils.isEmpty(commonInfo.getTitle()))
                 ((ListViewHolder) holder).mTitle.setText(commonInfo.getTitle());
-            if (!TextUtils.isEmpty(commonInfo.getSubtitle()))
-                ((ListViewHolder) holder).mSubtitle.setText(commonInfo.getSubtitle());
-            if (commonInfo.getSubicon() != null)
-                ((ListViewHolder) holder).mSubtitle.setCompoundDrawablesWithIntrinsicBounds(null, null, null, commonInfo.getSubicon());
         } else if (holder instanceof FooterViewHolder) {
             //((FooterViewHolder) holder).mTextView.setText("Exit");
         }
@@ -110,12 +108,10 @@ public class CommonAdapter extends BaseAdapter {
 
     private static class ListViewHolder extends RecyclerView.ViewHolder {
         TextView mTitle;
-        TextView mSubtitle;
         ListViewHolder(View itemView) {
             super(itemView);
 
-            mTitle = (TextView) itemView.findViewById(R.id.item_title);
-            mSubtitle = (TextView) itemView.findViewById(R.id.item_subtitle);
+            mTitle = (TextView) itemView.findViewById(android.R.id.text1);
         }
     }
 
