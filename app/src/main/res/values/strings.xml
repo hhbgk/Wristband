@@ -4,8 +4,8 @@
     <string name="heart_rate">HeartRate</string>
     <string name="sleep">Sleep</string>
     <string name="mine">Me</string>
-    <string name="min_heart_rate">Min heart rate</string>
-    <string name="max_heart_rate">Max heart rate</string>
+    <string name="min_heart_rate">Minimum</string>
+    <string name="max_heart_rate">Maximum</string>
     <string name="day">Day</string>
     <string name="week">Week</string>
     <string name="moth">Moth</string>
@@ -37,4 +37,7 @@
     <string name="light_sleep">Light sleep</string>
     <string name="sleep_quality">Sleep quality</string>
     <string name="total_sleep">Total sleep</string>
+    <string name="double_tap_to_exit">Double tap to exit</string>
+
+    <string name="sans_serif" translatable="false">sans-serif</string>
 </resources>

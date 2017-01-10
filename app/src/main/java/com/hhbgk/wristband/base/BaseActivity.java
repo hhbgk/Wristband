@@ -13,7 +13,7 @@ import com.hhbgk.wristband.MainApplication;
  */
 
 public class BaseActivity extends FragmentActivity {
-    private final String tag = getClass().getSimpleName();
+    protected final String tag = getClass().getSimpleName();
     private Toast mToastShort, mToastLong;
     public MainApplication mApplication;
 

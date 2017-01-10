@@ -21,10 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by bob on 17-1-4.
- */
-
 public class SportFragment extends BaseFragment {
     private DonutProgress donutProgress;
     private RecyclerView mGridView;

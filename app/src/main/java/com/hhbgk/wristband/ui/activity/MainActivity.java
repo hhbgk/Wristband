@@ -1,7 +1,9 @@
 package com.hhbgk.wristband.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.v4.app.Fragment;
 import android.view.View;
 
 import com.hhbgk.wristband.R;
@@ -11,7 +13,6 @@ import com.hhbgk.wristband.ui.fragment.MeFragment;
 import com.hhbgk.wristband.ui.fragment.SleepFragment;
 import com.hhbgk.wristband.ui.fragment.SportFragment;
 import com.hhbgk.wristband.ui.widget.Toolbar;
-import com.hhbgk.wristband.util.Dbug;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
@@ -19,6 +20,8 @@ public class MainActivity extends BaseActivity {
     String tag = getClass().getSimpleName();
     private Toolbar mToolbar;
     private BottomBar mBottomBar;
+    private static final int TIME_INTERVAL = 2000;
+    private long mBackPressedTimes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +33,6 @@ public class MainActivity extends BaseActivity {
             public void onTabSelected(@IdRes int tabId) {
                 switch (tabId){
                     case R.id.tab_sport:
-                        Dbug.i(tag, "sport----------");
                         changeFragment(R.id.container, new SportFragment(), SportFragment.class.getSimpleName());
                         break;
                     case R.id.tab_heartrate:
@@ -45,7 +47,7 @@ public class MainActivity extends BaseActivity {
                 }
             }
         });
-        changeFragment(R.id.container, new SleepFragment(), SleepFragment.class.getSimpleName());
+        changeFragment(R.id.container, new SportFragment(), SportFragment.class.getSimpleName());
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbar.setTitle("Title");
         mToolbar.setNavigationIcon(R.mipmap.ic_favorites);
@@ -54,8 +56,28 @@ public class MainActivity extends BaseActivity {
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                handleOperation();
             }
         });
+    }
+
+    private void handleOperation(){
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.container);
+        if (fragment instanceof SportFragment){
+            startActivity(new Intent(this, EventCalendarActivity.class));
+        }
+    }
+
+    @Override
+    public void onBackPressed()	{
+        if (mBackPressedTimes + TIME_INTERVAL > System.currentTimeMillis()) {
+            //super.onBackPressed();
+            finish();
+            return;
+        }else {
+            showToastShort(R.string.double_tap_to_exit);
+        }
+
+        mBackPressedTimes = System.currentTimeMillis();
     }
 }
