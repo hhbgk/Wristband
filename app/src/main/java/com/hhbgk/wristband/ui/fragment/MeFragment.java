@@ -1,5 +1,6 @@
 package com.hhbgk.wristband.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.hhbgk.wristband.R;
 import com.hhbgk.wristband.base.BaseFragment;
 import com.hhbgk.wristband.data.bean.CommonInfo;
+import com.hhbgk.wristband.ui.activity.AlarmActivity;
 import com.hhbgk.wristband.ui.adapter.BaseAdapter;
 import com.hhbgk.wristband.ui.adapter.ListAdapter;
 import com.hhbgk.wristband.ui.widget.CustomDivider;
@@ -28,6 +30,10 @@ public class MeFragment extends BaseFragment {
     private String tag = getClass().getSimpleName();
     private RecyclerView mGridView;
     private TextView mQuit;
+    private static final int ITEM_TYPE_BAND = 0;
+    private static final int ITEM_TYPE_SNOOZE = 1;
+    private static final int ITEM_TYPE_ALARM = 2;
+
 
     @Nullable
     @Override
@@ -58,6 +64,15 @@ public class MeFragment extends BaseFragment {
             @Override
             public void onItemClick(View view, int position) {
                 Dbug.i(tag, "onItem "+position);
+                switch (position){
+                    case ITEM_TYPE_BAND:
+                        break;
+                    case ITEM_TYPE_SNOOZE:
+                        break;
+                    case ITEM_TYPE_ALARM:
+                        startActivity(new Intent(getActivity(), AlarmActivity.class));
+                        break;
+                }
             }
 
             @Override

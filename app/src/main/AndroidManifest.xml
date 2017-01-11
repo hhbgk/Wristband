@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.EventCalendarActivity"></activity>
+        <activity android:name=".ui.activity.EventCalendarActivity" />
+        <activity android:name=".ui.activity.AlarmActivity"></activity>
     </application>
 
 </manifest>
