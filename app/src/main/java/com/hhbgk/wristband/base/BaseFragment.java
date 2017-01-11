@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.hhbgk.wristband.MainApplication;
 
 public class BaseFragment extends Fragment {
+    protected String tag = getClass().getSimpleName();
     private Toast mToastShort;
     private Toast mToastLong;
     public MainApplication mApplication;

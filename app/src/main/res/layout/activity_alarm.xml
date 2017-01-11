@@ -4,37 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:pickerView="http://schemas.android.com/apk/res-auto">
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <com.hhbgk.wristband.ui.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_alignParentTop="true"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <com.hhbgk.wristband.ui.widget.NumberPickerView
-            android:id="@+id/hour_picker"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            pickerView:npv_ItemPaddingHorizontal="5dp"
-            pickerView:npv_ItemPaddingVertical="5dp"
-            pickerView:npv_ShowCount="5"
-            pickerView:npv_TextArray="@array/minute_display"
-            pickerView:npv_TextSizeNormal="14sp"
-            pickerView:npv_TextSizeSelected="20sp"
-            pickerView:npv_WrapSelectorWheel="true"
-            pickerView:npv_TextGravity="right"/>
-        <com.hhbgk.wristband.ui.widget.NumberPickerView
-            android:id="@+id/minute_picker"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            pickerView:npv_ItemPaddingHorizontal="5dp"
-            pickerView:npv_ItemPaddingVertical="5dp"
-            pickerView:npv_ShowCount="5"
-            pickerView:npv_TextArray="@array/minute_display"
-            pickerView:npv_TextSizeNormal="14sp"
-            pickerView:npv_TextSizeSelected="20sp"
-            pickerView:npv_WrapSelectorWheel="true"
-            pickerView:npv_TextGravity="left"/>
-    </LinearLayout>
+        android:layout_width="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@+id/bottombar"/>
 
 </RelativeLayout>
