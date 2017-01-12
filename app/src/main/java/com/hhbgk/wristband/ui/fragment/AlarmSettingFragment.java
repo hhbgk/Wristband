@@ -3,14 +3,23 @@ package com.hhbgk.wristband.ui.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.hhbgk.wristband.R;
 import com.hhbgk.wristband.base.BaseFragment;
+import com.hhbgk.wristband.ui.adapter.AlarmAdapter;
+import com.hhbgk.wristband.ui.widget.CustomDivider;
 import com.hhbgk.wristband.util.Dbug;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,7 +30,7 @@ import com.hhbgk.wristband.util.Dbug;
  * create an instance of this fragment.
  */
 public class AlarmSettingFragment extends BaseFragment {
-    // TODO: Rename parameter arguments, choose names that match
+    private RecyclerView mListView;
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -67,7 +76,24 @@ public class AlarmSettingFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_alarm_setting, container, false);
+        View view = inflater.inflate(R.layout.fragment_alarm_setting, container, false);
+        mListView = (RecyclerView) view.findViewById(R.id.alarm_list);
+        return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mListView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
+        mListView.addItemDecoration(new CustomDivider(getActivity()));
+        Random r = new Random();
+        List<String> list = new ArrayList<>();
+        for (int i = 0 ; i < 5; i++){
+            list.add(Integer.toString(r.nextInt(23)));
+        }
+
+        AlarmAdapter alarmAdapter = new AlarmAdapter(list);
+        mListView.setAdapter(alarmAdapter);
     }
 
     @Override

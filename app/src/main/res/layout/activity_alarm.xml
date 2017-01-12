@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/activity_alarm"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:pickerView="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
     <com.hhbgk.wristband.ui.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_alignParentTop="true"
@@ -14,7 +13,6 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
-        android:layout_above="@+id/bottombar"/>
+        android:layout_below="@id/toolbar"/>
 
 </RelativeLayout>

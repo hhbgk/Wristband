@@ -38,6 +38,9 @@
     <string name="sleep_quality">Sleep quality</string>
     <string name="total_sleep">Total sleep</string>
     <string name="double_tap_to_exit">Double tap to exit</string>
+    <string name="repeat">Repeat</string>
+    <string name="rename">Rename</string>
+    <string name="snooze">Snooze</string>
 
     <string name="sans_serif" translatable="false">sans-serif</string>
 

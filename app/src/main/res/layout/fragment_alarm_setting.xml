@@ -4,10 +4,9 @@
     android:layout_height="match_parent"
     tools:context="com.hhbgk.wristband.ui.fragment.AlarmSettingFragment">
 
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:thumb="@mipmap/ic_switch_thumb"
-        android:track="@drawable/switch_track_selector"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/alarm_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </FrameLayout>

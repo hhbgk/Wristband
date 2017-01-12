@@ -2,34 +2,45 @@
     xmlns:pickerView="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
-    <com.hhbgk.wristband.ui.widget.NumberPickerView
-        android:id="@+id/hour_picker"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        pickerView:npv_ItemPaddingHorizontal="5dp"
-        pickerView:npv_ItemPaddingVertical="5dp"
-        pickerView:npv_ShowCount="5"
-        pickerView:npv_TextArray="@array/minute_display"
-        pickerView:npv_TextGravity="right"
-        pickerView:npv_TextSizeNormal="14sp"
-        pickerView:npv_TextSizeSelected="20sp"
-        pickerView:npv_WrapSelectorWheel="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <com.hhbgk.wristband.ui.widget.NumberPickerView
-        android:id="@+id/minute_picker"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        pickerView:npv_ItemPaddingHorizontal="5dp"
-        pickerView:npv_ItemPaddingVertical="5dp"
-        pickerView:npv_ShowCount="5"
-        pickerView:npv_TextArray="@array/minute_display"
-        pickerView:npv_TextGravity="left"
-        pickerView:npv_TextSizeNormal="14sp"
-        pickerView:npv_TextSizeSelected="20sp"
-        pickerView:npv_WrapSelectorWheel="true" />
+        <com.hhbgk.wristband.ui.widget.NumberPickerView
+            android:id="@+id/hour_picker"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            pickerView:npv_ItemPaddingHorizontal="5dp"
+            pickerView:npv_ItemPaddingVertical="5dp"
+            pickerView:npv_ShowCount="5"
+            pickerView:npv_TextArray="@array/minute_display"
+            pickerView:npv_TextGravity="right"
+            pickerView:npv_TextSizeNormal="14sp"
+            pickerView:npv_TextSizeSelected="20sp"
+            pickerView:npv_WrapSelectorWheel="true" />
+
+        <com.hhbgk.wristband.ui.widget.NumberPickerView
+            android:id="@+id/minute_picker"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            pickerView:npv_ItemPaddingHorizontal="5dp"
+            pickerView:npv_ItemPaddingVertical="5dp"
+            pickerView:npv_ShowCount="5"
+            pickerView:npv_TextArray="@array/minute_display"
+            pickerView:npv_TextGravity="left"
+            pickerView:npv_TextSizeNormal="14sp"
+            pickerView:npv_TextSizeSelected="20sp"
+            pickerView:npv_WrapSelectorWheel="true" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
