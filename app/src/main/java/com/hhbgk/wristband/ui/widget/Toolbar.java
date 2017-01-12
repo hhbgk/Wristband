@@ -33,6 +33,9 @@ public class Toolbar extends FrameLayout{
         if (mOperation != null && l != null){
             mOperation.setOnClickListener(l);
         }
+        if (mOperationBackground != null && l != null){
+            mOperationBackground.setOnClickListener(l);
+        }
     }
 
     public Toolbar(Context context) {

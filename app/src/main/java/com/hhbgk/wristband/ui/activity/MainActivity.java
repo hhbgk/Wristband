@@ -27,29 +27,8 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mBottomBar = (BottomBar) findViewById(R.id.bottombar);
-        mBottomBar.setOnTabSelectListener(new OnTabSelectListener() {
-            @Override
-            public void onTabSelected(@IdRes int tabId) {
-                switch (tabId){
-                    case R.id.tab_sport:
-                        changeFragment(R.id.container, new SportFragment(), SportFragment.class.getSimpleName());
-                        break;
-                    case R.id.tab_heartrate:
-                        changeFragment(R.id.container, new HeartRateFragment(), HeartRateFragment.class.getSimpleName());
-                        break;
-                    case R.id.tab_sleep:
-                        changeFragment(R.id.container, new SleepFragment(), SleepFragment.class.getSimpleName());
-                        break;
-                    case R.id.tab_me:
-                        changeFragment(R.id.container, new MeFragment(), MeFragment.class.getSimpleName());
-                        break;
-                }
-            }
-        });
-        changeFragment(R.id.container, new SportFragment(), SportFragment.class.getSimpleName());
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.setTitle("Title");
+        mToolbar.setTitle(R.string.sport);
         mToolbar.setNavigationIcon(R.mipmap.ic_favorites);
         mToolbar.setOperationIcon(R.mipmap.ic_friends);
         mToolbar.setOperationText("OK");
@@ -59,6 +38,32 @@ public class MainActivity extends BaseActivity {
                 handleOperation();
             }
         });
+
+        mBottomBar = (BottomBar) findViewById(R.id.bottombar);
+        mBottomBar.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelected(@IdRes int tabId) {
+                switch (tabId){
+                    case R.id.tab_sport:
+                        mToolbar.setTitle(R.string.sport);
+                        changeFragment(R.id.container, new SportFragment(), SportFragment.class.getSimpleName());
+                        break;
+                    case R.id.tab_heartrate:
+                        changeFragment(R.id.container, new HeartRateFragment(), HeartRateFragment.class.getSimpleName());
+                        mToolbar.setTitle(R.string.heart_rate);
+                        break;
+                    case R.id.tab_sleep:
+                        changeFragment(R.id.container, new SleepFragment(), SleepFragment.class.getSimpleName());
+                        mToolbar.setTitle(R.string.sleep);
+                        break;
+                    case R.id.tab_me:
+                        changeFragment(R.id.container, new MeFragment(), MeFragment.class.getSimpleName());
+                        mToolbar.setTitle(R.string.mine);
+                        break;
+                }
+            }
+        });
+        changeFragment(R.id.container, new SportFragment(), SportFragment.class.getSimpleName());
     }
 
     private void handleOperation(){
