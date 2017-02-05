@@ -10,8 +10,10 @@ public class CommonInfo {
     private String title;
     private String subtitle;
     private Drawable subicon;
+    private int type;
 
-    public CommonInfo(String title, String subtitle, Drawable drawable){
+    public CommonInfo(int type, String title, String subtitle, Drawable drawable){
+        this.type = type;
         this.title = title;
         this.subtitle = subtitle;
         this.subicon = drawable;
@@ -39,5 +41,13 @@ public class CommonInfo {
 
     public void setSubicon(Drawable subicon) {
         this.subicon = subicon;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }

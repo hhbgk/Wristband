@@ -116,7 +116,7 @@ public class AddAlarmFragment extends BaseFragment implements NumberPickerView.O
             list.add(new CommonInfo(s, null, null));
         }
 
-        AlarmSettingAdapter adapter = new AlarmSettingAdapter(getActivity(), list, 0, 1);
+        AlarmSettingAdapter adapter = new AlarmSettingAdapter(getActivity(), list, 0, 0);
         mListView.setAdapter(adapter);
     }
 }

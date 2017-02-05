@@ -14,4 +14,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MySwitch" parent="@android:style/Widget.CompoundButton">
+        <item name="android:button">@drawable/switch_track_selector</item>
+    </style>
 </resources>

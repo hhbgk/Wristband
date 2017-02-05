@@ -129,4 +129,10 @@
         <item>@string/rename</item>
         <item>@string/snooze</item>
     </string-array>
+    <string-array name="about_menu">
+        <item>@string/band_version</item>
+        <item>@string/band_upgrade</item>
+        <item>@string/band_introduction</item>
+        <item>@string/band_contact</item>
+    </string-array>
 </resources>
