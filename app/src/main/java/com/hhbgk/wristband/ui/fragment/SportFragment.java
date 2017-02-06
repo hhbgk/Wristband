@@ -16,6 +16,7 @@ import com.hhbgk.wristband.data.bean.CommonInfo;
 import com.hhbgk.wristband.ui.adapter.CommonAdapter;
 import com.hhbgk.wristband.ui.widget.CustomDivider;
 import com.hhbgk.wristband.ui.widget.DonutProgress;
+import com.hhbgk.wristband.util.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +58,7 @@ public class SportFragment extends BaseFragment {
                 drawable = getActivity().getDrawable(R.mipmap.ic_favorites);
             else
                 drawable = getActivity().getResources().getDrawable(R.mipmap.ic_favorites);
-            list.add(new CommonInfo(Integer.toString(r.nextInt(100)), s, drawable));
+            list.add(new CommonInfo(Constants.TYPE_NORMAL, Integer.toString(r.nextInt(100)), s, drawable));
 
         }
 

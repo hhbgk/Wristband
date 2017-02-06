@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.hhbgk.wristband"
-        minSdkVersion 17
+        minSdkVersion 18
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -37,6 +37,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+    compile project(path: ':BluetoothKit')
     compile(name: 'MPChartLib-r0109', ext: 'aar')
     //compile 'com.github.PhilJay:MPAndroidChart:v3.0.1'
     compile 'com.android.support:appcompat-v7:25.1.0'

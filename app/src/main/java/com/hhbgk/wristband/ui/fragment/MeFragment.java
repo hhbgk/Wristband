@@ -14,9 +14,12 @@ import com.hhbgk.wristband.R;
 import com.hhbgk.wristband.base.BaseFragment;
 import com.hhbgk.wristband.data.bean.CommonInfo;
 import com.hhbgk.wristband.ui.activity.AlarmActivity;
+import com.hhbgk.wristband.ui.activity.AlertedActivity;
+import com.hhbgk.wristband.ui.activity.DeviceListActivity;
 import com.hhbgk.wristband.ui.adapter.BaseAdapter;
 import com.hhbgk.wristband.ui.adapter.ListAdapter;
 import com.hhbgk.wristband.ui.widget.CustomDivider;
+import com.hhbgk.wristband.util.Constants;
 import com.hhbgk.wristband.util.Dbug;
 
 import java.util.ArrayList;
@@ -30,10 +33,6 @@ public class MeFragment extends BaseFragment {
     private String tag = getClass().getSimpleName();
     private RecyclerView mGridView;
     private TextView mQuit;
-    private static final int ITEM_TYPE_BAND = 0;
-    private static final int ITEM_TYPE_SNOOZE = 1;
-    private static final int ITEM_TYPE_ALARM = 2;
-
 
     @Nullable
     @Override
@@ -53,23 +52,37 @@ public class MeFragment extends BaseFragment {
         mGridView.addItemDecoration(new CustomDivider(getActivity()));
         String[] grids = mApplication.getResources().getStringArray(R.array.me_lists);
         List<CommonInfo> list = new ArrayList<>();
-        for (String s : grids){
-            list.add(new CommonInfo(s, null, null));
+        for (int i = 0; i < grids.length; i++){
+            if (i == 1)
+                list.add(new CommonInfo(Constants.TYPE_BAND_STATE, grids[i], null, null));
+            else if (i == 2)
+                list.add(new CommonInfo(Constants.TYPE_BAND_POWER, grids[i], null, null));
+            else if (i == 3)
+                list.add(new CommonInfo(Constants.TYPE_BAND_ALERTED, grids[i], null, null));
+            else if (i == 4)
+                list.add(new CommonInfo(Constants.TYPE_BAND_ALARM, grids[i], null, null));
+            else if (i == grids.length-1)
+                list.add(new CommonInfo(Constants.TYPE_ABOUT, grids[i], null, null));
+            else
+                list.add(new CommonInfo(Constants.TYPE_NORMAL, grids[i], null, null));
         }
 
-        ListAdapter adapter = new ListAdapter(getActivity(), list);
+        final ListAdapter adapter = new ListAdapter(getActivity(), list);
         mGridView.setAdapter(adapter);
 
         adapter.setOnItemClickListener(new BaseAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Dbug.i(tag, "onItem "+position);
-                switch (position){
-                    case ITEM_TYPE_BAND:
+                CommonInfo item = (CommonInfo) adapter.getItem(position);
+                Dbug.i(tag, "onItem "+position+", type="+ item.getType());
+                switch (item.getType()){
+                    case Constants.TYPE_BAND_STATE:
+                        startActivity(new Intent(getActivity(), DeviceListActivity.class));
                         break;
-                    case ITEM_TYPE_SNOOZE:
+                    case Constants.TYPE_BAND_ALERTED:
+                        startActivity(new Intent(getActivity(), AlertedActivity.class));
                         break;
-                    case ITEM_TYPE_ALARM:
+                    case Constants.TYPE_BAND_ALARM:
                         startActivity(new Intent(getActivity(), AlarmActivity.class));
                         break;
                 }

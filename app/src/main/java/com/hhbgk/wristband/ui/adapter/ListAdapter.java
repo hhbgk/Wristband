@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.hhbgk.wristband.R;
 import com.hhbgk.wristband.data.bean.CommonInfo;
+import com.hhbgk.wristband.util.Constants;
 
 import java.util.List;
 
@@ -53,6 +54,18 @@ public class ListAdapter extends BaseAdapter {
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof ListViewHolder){
             final CommonInfo commonInfo = mData.get(position);
+            switch (commonInfo.getType()){
+                case Constants.TYPE_BAND_STATE:
+                    break;
+                case Constants.TYPE_BAND_POWER:
+                    break;
+                case Constants.TYPE_BAND_ALERTED:
+                    break;
+                case Constants.TYPE_BAND_ALARM:
+                    break;
+                case Constants.TYPE_ABOUT:
+                    break;
+            }
             if (!TextUtils.isEmpty(commonInfo.getTitle()))
                 ((ListViewHolder) holder).mTitle.setText(commonInfo.getTitle());
         } else if (holder instanceof FooterViewHolder) {
@@ -96,6 +109,10 @@ public class ListAdapter extends BaseAdapter {
     @Override
     public long getItemId(int position) {
         return position;
+    }
+
+    public Object getItem(int position) {
+        return mData.get(position);
     }
 
     @Override

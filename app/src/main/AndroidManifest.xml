@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hhbgk.wristband">
+          package="com.hhbgk.wristband">
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true"/>
 
     <application
         android:name=".MainApplication"
@@ -11,13 +22,25 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.EventCalendarActivity" />
-        <activity android:name=".ui.activity.AlarmActivity"></activity>
+        <activity android:name=".ui.activity.EventCalendarActivity"/>
+        <activity android:name=".ui.activity.AlarmActivity"/>
+        <activity android:name=".ui.activity.DeviceListActivity"/>
+        <activity android:name=".ui.activity.DeviceDetailActivity"/>
+        <activity android:name=".ui.activity.CharacterActivity"/>
+        <activity android:name=".ui.activity.AlertedActivity">
+        </activity>
+
+        <receiver android:name="com.hhbgk.wristband.receiver.PhoneCallReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BluetoothKit/BluetoothKit.iml" filepath="$PROJECT_DIR$/BluetoothKit/BluetoothKit.iml" />
       <module fileurl="file://$PROJECT_DIR$/Wristband.iml" filepath="$PROJECT_DIR$/Wristband.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

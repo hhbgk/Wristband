@@ -135,4 +135,8 @@
         <item>@string/band_introduction</item>
         <item>@string/band_contact</item>
     </string-array>
+    <string-array name="alerted_menu">
+        <item>@string/call_alerted</item>
+        <item>@string/sms_alerted</item>
+    </string-array>
 </resources>

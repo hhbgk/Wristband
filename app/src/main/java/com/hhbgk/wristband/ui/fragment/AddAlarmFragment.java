@@ -16,6 +16,7 @@ import com.hhbgk.wristband.data.bean.CommonInfo;
 import com.hhbgk.wristband.ui.adapter.AlarmSettingAdapter;
 import com.hhbgk.wristband.ui.widget.CustomDivider;
 import com.hhbgk.wristband.ui.widget.NumberPickerView;
+import com.hhbgk.wristband.util.Constants;
 import com.hhbgk.wristband.util.Dbug;
 
 import java.util.ArrayList;
@@ -113,7 +114,7 @@ public class AddAlarmFragment extends BaseFragment implements NumberPickerView.O
         String[] grids = mApplication.getResources().getStringArray(R.array.alarm_setting_menu);
         List<CommonInfo> list = new ArrayList<>();
         for (String s : grids){
-            list.add(new CommonInfo(s, null, null));
+            list.add(new CommonInfo(Constants.TYPE_NORMAL,s, null, null));
         }
 
         AlarmSettingAdapter adapter = new AlarmSettingAdapter(getActivity(), list, 0, 0);
